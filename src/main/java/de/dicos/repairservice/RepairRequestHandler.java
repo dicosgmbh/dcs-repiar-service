@@ -23,7 +23,7 @@ public final class RepairRequestHandler
         HttpHandler {
 
     private static final Logger log = System.getLogger(RepairRequestHandler.class.getName());
-    private static final URI ADMINISTRATION_URI = URI.create("http://localhost:8093/repair-request");
+    private static final URI ADMINISTRATION_URI = URI.create("http://localhost:8081/repair-request");
 
     private final HttpClient client = HttpClient.newHttpClient();
 
