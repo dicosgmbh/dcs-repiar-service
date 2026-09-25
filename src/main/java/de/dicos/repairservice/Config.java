@@ -7,30 +7,28 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.stream.Stream;
 
-public record Config(int port, String contextPath, String user, String password)
-{
-	public static Config load(Optional<String> profile)
-	{
-		Properties props = new Properties();
-		Stream.concat(Stream.of("application.properties"),
-			profile.map(p -> "application-" + p + ".properties").stream())
-			.forEach(name -> readInto(props, name));
+public record Config(int port, String contextPath, String user, String password) {
 
-		return new Config(
-			Integer.parseInt(props.getProperty("server.port")),
-			props.getProperty("server.context-path"),
-			props.getProperty("security.user.name"),
-			props.getProperty("security.user.password"));
-	}
+    public static Config load(Optional<String> profile) {
+        Properties props = new Properties();
+        Stream.concat(Stream.of("application.properties"),
+                profile.map(p -> "application-" + p + ".properties").stream())
+                .forEach(name -> readInto(props, name));
 
-	private static void readInto(Properties props, String resource)
-	{
-		try (InputStream in = Config.class.getClassLoader().getResourceAsStream(resource)) {
-			if (in != null) {
-				props.load(in);
-			}
-		} catch (IOException e) {
-			throw new UncheckedIOException(e);
-		}
-	}
+        return new Config(
+                Integer.parseInt(props.getProperty("server.port")),
+                props.getProperty("server.context-path"),
+                props.getProperty("security.user.name"),
+                props.getProperty("security.user.password"));
+    }
+
+    private static void readInto(Properties props, String resource) {
+        try (InputStream in = Config.class.getClassLoader().getResourceAsStream(resource)) {
+            if (in != null) {
+                props.load(in);
+            }
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
 }
