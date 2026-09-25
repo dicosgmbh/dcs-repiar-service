@@ -1,0 +1,62 @@
+# OpenAPI version: 3.0.3
+openapi: 3.0.3
+info:
+  title: Car Repair Request API
+  description: An API for creating car repair requests
+  version: 1.0.0
+servers:
+  - url: https://123.123.123.123:1234
+paths:
+  /repair-request:
+    post:
+      summary: Create a new car repair request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RepairRequest'
+      responses:
+        '201':
+          description: Car repair request created successfully
+        '400':
+          description: Bad request, invalid input data
+components:
+  schemas:
+    RepairRequest:
+      type: object
+      properties:
+        customerNumber:
+          type: integer
+          description: Customer's unique number
+        carModel:
+          type: string
+          description: Car's model
+        numberPlate:
+          type: string
+          description: Car's number plate
+        preferredDate:
+          type: string
+          description: Preferred date for repair
+        repairOperations:
+          type: array
+          items:
+            $ref: '#/components/schemas/RepairOperation'
+          description: List of necessary repair operations
+      required:
+        - customerNumber
+        - numberPlate
+        - repairOperations
+    RepairOperation:
+      type: object
+      properties:
+        description:
+          type: string
+          description: Description of the repair operation
+        priceEstimation:
+          type: number
+          format: double
+          description: Estimated price for the repair operation
+      required:
+        - description
+        - priceEstimation

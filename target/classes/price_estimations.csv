@@ -1,0 +1,241 @@
+Car Model,Repair Action,Price Estimation
+Audi A3,Ölwechsel,405.84
+Audi A3,Bremsbelagwechsel,335.21
+Audi A3,Reifenrotation,191.48
+Audi A3,Zündkerzenwechsel,136.3
+Audi A3,Luftfilterwechsel,324.97
+Audi A3,Radausrichtung,246.95
+Audi A3,Batteriewechsel,202.68
+Audi A3,Getriebeölwechsel,460.97
+Audi A3,Motorabstimmung,351.25
+Audi A3,Bremsscheibenwechsel,153.09
+Audi A3,Kühlmittelaustausch,75.29
+Audi A3,Zahnriemenwechsel,479.16
+Audi A3,Fahrwerkstuning,212.5
+Audi A3,Kupplungsaustausch,287.66
+Audi A3,Kraftstoffsystemreinigung,414.62
+Audi A3,Achsenreparatur,191.71
+Audi A3,Elektronikdiagnose,102.49
+Audi A3,Klimaanlagenwartung,309.8
+Audi A3,Getriebereparatur,376.35
+Audi A3,Steuerkettentausch,86.79
+Audi A4,Ölwechsel,70.28
+Audi A4,Bremsbelagwechsel,453.98
+Audi A4,Reifenrotation,94.93
+Audi A4,Zündkerzenwechsel,103.99
+Audi A4,Luftfilterwechsel,167.07
+Audi A4,Radausrichtung,328.74
+Audi A4,Batteriewechsel,480.04
+Audi A4,Getriebeölwechsel,68.86
+Audi A4,Motorabstimmung,361.99
+Audi A4,Bremsscheibenwechsel,317.75
+Audi A4,Kühlmittelaustausch,152.76
+Audi A4,Zahnriemenwechsel,421.5
+Audi A4,Fahrwerkstuning,388.05
+Audi A4,Kupplungsaustausch,417.68
+Audi A4,Kraftstoffsystemreinigung,160.46
+Audi A4,Achsenreparatur,192.77
+Audi A4,Elektronikdiagnose,182.15
+Audi A4,Klimaanlagenwartung,219.25
+Audi A4,Getriebereparatur,208.76
+Audi A4,Steuerkettentausch,311.75
+Audi A6,Ölwechsel,207.45
+Audi A6,Bremsbelagwechsel,141.43
+Audi A6,Reifenrotation,77.72
+Audi A6,Zündkerzenwechsel,307.68
+Audi A6,Luftfilterwechsel,334.38
+Audi A6,Radausrichtung,87.13
+Audi A6,Batteriewechsel,396.6
+Audi A6,Getriebeölwechsel,188.53
+Audi A6,Motorabstimmung,306.69
+Audi A6,Bremsscheibenwechsel,120.3
+Audi A6,Kühlmittelaustausch,273.5
+Audi A6,Zahnriemenwechsel,222.91
+Audi A6,Fahrwerkstuning,317.15
+Audi A6,Kupplungsaustausch,184.37
+Audi A6,Kraftstoffsystemreinigung,183.47
+Audi A6,Achsenreparatur,278.08
+Audi A6,Elektronikdiagnose,288.08
+Audi A6,Klimaanlagenwartung,158.29
+Audi A6,Getriebereparatur,102.72
+Audi A6,Steuerkettentausch,212.29
+Audi Q3,Ölwechsel,225.19
+Audi Q3,Bremsbelagwechsel,204.59
+Audi Q3,Reifenrotation,315.18
+Audi Q3,Zündkerzenwechsel,237.2
+Audi Q3,Luftfilterwechsel,436.01
+Audi Q3,Radausrichtung,164.07
+Audi Q3,Batteriewechsel,362.96
+Audi Q3,Getriebeölwechsel,293.42
+Audi Q3,Motorabstimmung,109.42
+Audi Q3,Bremsscheibenwechsel,379.51
+Audi Q3,Kühlmittelaustausch,495.89
+Audi Q3,Zahnriemenwechsel,460.42
+Audi Q3,Fahrwerkstuning,217.08
+Audi Q3,Kupplungsaustausch,360.79
+Audi Q3,Kraftstoffsystemreinigung,499.83
+Audi Q3,Achsenreparatur,354.79
+Audi Q3,Elektronikdiagnose,477.37
+Audi Q3,Klimaanlagenwartung,126.44
+Audi Q3,Getriebereparatur,354.17
+Audi Q3,Steuerkettentausch,455.96
+Audi Q5,Ölwechsel,414.54
+Audi Q5,Bremsbelagwechsel,244.94
+Audi Q5,Reifenrotation,256.7
+Audi Q5,Zündkerzenwechsel,96.93
+Audi Q5,Luftfilterwechsel,406.76
+Audi Q5,Radausrichtung,337.51
+Audi Q5,Batteriewechsel,482.47
+Audi Q5,Getriebeölwechsel,454.1
+Audi Q5,Motorabstimmung,187.52
+Audi Q5,Bremsscheibenwechsel,220.44
+Audi Q5,Kühlmittelaustausch,214.06
+Audi Q5,Zahnriemenwechsel,359.86
+Audi Q5,Fahrwerkstuning,334.55
+Audi Q5,Kupplungsaustausch,234.38
+Audi Q5,Kraftstoffsystemreinigung,166.4
+Audi Q5,Achsenreparatur,186.06
+Audi Q5,Elektronikdiagnose,373.4
+Audi Q5,Klimaanlagenwartung,170.28
+Audi Q5,Getriebereparatur,178.03
+Audi Q5,Steuerkettentausch,326.13
+Audi Q7,Ölwechsel,211.01
+Audi Q7,Bremsbelagwechsel,491.2
+Audi Q7,Reifenrotation,375.87
+Audi Q7,Zündkerzenwechsel,476.55
+Audi Q7,Luftfilterwechsel,394.58
+Audi Q7,Radausrichtung,105.07
+Audi Q7,Batteriewechsel,453.46
+Audi Q7,Getriebeölwechsel,426.19
+Audi Q7,Motorabstimmung,76.35
+Audi Q7,Bremsscheibenwechsel,242.22
+Audi Q7,Kühlmittelaustausch,63.69
+Audi Q7,Zahnriemenwechsel,274.99
+Audi Q7,Fahrwerkstuning,63.81
+Audi Q7,Kupplungsaustausch,228.43
+Audi Q7,Kraftstoffsystemreinigung,156.43
+Audi Q7,Achsenreparatur,474.38
+Audi Q7,Elektronikdiagnose,469.43
+Audi Q7,Klimaanlagenwartung,194.63
+Audi Q7,Getriebereparatur,267.4
+Audi Q7,Steuerkettentausch,259.82
+BMW 3 Series,Ölwechsel,494.66
+BMW 3 Series,Bremsbelagwechsel,368.93
+BMW 3 Series,Reifenrotation,320.41
+BMW 3 Series,Zündkerzenwechsel,278.49
+BMW 3 Series,Luftfilterwechsel,283.04
+BMW 3 Series,Radausrichtung,336.58
+BMW 3 Series,Batteriewechsel,135.91
+BMW 3 Series,Getriebeölwechsel,164.74
+BMW 3 Series,Motorabstimmung,410.17
+BMW 3 Series,Bremsscheibenwechsel,217.12
+BMW 3 Series,Kühlmittelaustausch,248.83
+BMW 3 Series,Zahnriemenwechsel,244.57
+BMW 3 Series,Fahrwerkstuning,316.48
+BMW 3 Series,Kupplungsaustausch,419.14
+BMW 3 Series,Kraftstoffsystemreinigung,375.46
+BMW 3 Series,Achsenreparatur,488.6
+BMW 3 Series,Elektronikdiagnose,189.26
+BMW 3 Series,Klimaanlagenwartung,164.24
+BMW 3 Series,Getriebereparatur,474.64
+BMW 3 Series,Steuerkettentausch,221.17
+BMW 5 Series,Ölwechsel,117.08
+BMW 5 Series,Bremsbelagwechsel,331.2
+BMW 5 Series,Reifenrotation,376.65
+BMW 5 Series,Zündkerzenwechsel,318.1
+BMW 5 Series,Luftfilterwechsel,111.28
+BMW 5 Series,Radausrichtung,79.24
+BMW 5 Series,Batteriewechsel,244.71
+BMW 5 Series,Getriebeölwechsel,376.73
+BMW 5 Series,Motorabstimmung,248.95
+BMW 5 Series,Bremsscheibenwechsel,348.92
+BMW 5 Series,Kühlmittelaustausch,385.0
+BMW 5 Series,Zahnriemenwechsel,454.03
+BMW 5 Series,Fahrwerkstuning,383.03
+BMW 5 Series,Kupplungsaustausch,223.66
+BMW 5 Series,Kraftstoffsystemreinigung,169.33
+BMW 5 Series,Achsenreparatur,314.7
+BMW 5 Series,Elektronikdiagnose,261.65
+BMW 5 Series,Klimaanlagenwartung,306.9
+BMW 5 Series,Getriebereparatur,283.22
+BMW 5 Series,Steuerkettentausch,414.29
+BMW 7 Series,Ölwechsel,430.71
+BMW 7 Series,Bremsbelagwechsel,436.74
+BMW 7 Series,Reifenrotation,452.17
+BMW 7 Series,Zündkerzenwechsel,427.93
+BMW 7 Series,Luftfilterwechsel,324.38
+BMW 7 Series,Radausrichtung,239.03
+BMW 7 Series,Batteriewechsel,462.85
+BMW 7 Series,Getriebeölwechsel,59.14
+BMW 7 Series,Motorabstimmung,233.96
+BMW 7 Series,Bremsscheibenwechsel,201.35
+BMW 7 Series,Kühlmittelaustausch,418.94
+BMW 7 Series,Zahnriemenwechsel,402.46
+BMW 7 Series,Fahrwerkstuning,220.36
+BMW 7 Series,Kupplungsaustausch,405.22
+BMW 7 Series,Kraftstoffsystemreinigung,219.45
+BMW 7 Series,Achsenreparatur,153.23
+BMW 7 Series,Elektronikdiagnose,337.98
+BMW 7 Series,Klimaanlagenwartung,205.21
+BMW 7 Series,Getriebereparatur,336.81
+BMW 7 Series,Steuerkettentausch,229.81
+BMW X1,Ölwechsel,128.7
+BMW X1,Bremsbelagwechsel,205.62
+BMW X1,Reifenrotation,138.4
+BMW X1,Zündkerzenwechsel,406.5
+BMW X1,Luftfilterwechsel,440.17
+BMW X1,Radausrichtung,258.92
+BMW X1,Batteriewechsel,304.54
+BMW X1,Getriebeölwechsel,354.04
+BMW X1,Motorabstimmung,164.77
+BMW X1,Bremsscheibenwechsel,75.16
+BMW X1,Kühlmittelaustausch,404.19
+BMW X1,Zahnriemenwechsel,239.98
+BMW X1,Fahrwerkstuning,147.48
+BMW X1,Kupplungsaustausch,372.1
+BMW X1,Kraftstoffsystemreinigung,465.71
+BMW X1,Achsenreparatur,80.32
+BMW X1,Elektronikdiagnose,240.69
+BMW X1,Klimaanlagenwartung,353.08
+BMW X1,Getriebereparatur,337.79
+BMW X1,Steuerkettentausch,238.57
+BMW X3,Ölwechsel,80.15
+BMW X3,Bremsbelagwechsel,422.28
+BMW X3,Reifenrotation,106.97
+BMW X3,Zündkerzenwechsel,445.53
+BMW X3,Luftfilterwechsel,450.85
+BMW X3,Radausrichtung,141.58
+BMW X3,Batteriewechsel,465.71
+BMW X3,Getriebeölwechsel,76.71
+BMW X3,Motorabstimmung,96.77
+BMW X3,Bremsscheibenwechsel,74.06
+BMW X3,Kühlmittelaustausch,237.44
+BMW X3,Zahnriemenwechsel,211.23
+BMW X3,Fahrwerkstuning,285.99
+BMW X3,Kupplungsaustausch,212.45
+BMW X3,Kraftstoffsystemreinigung,159.68
+BMW X3,Achsenreparatur,364.46
+BMW X3,Elektronikdiagnose,134.56
+BMW X3,Klimaanlagenwartung,286.56
+BMW X3,Getriebereparatur,279.16
+BMW X3,Steuerkettentausch,213.62
+BMW X5,Ölwechsel,499.35
+BMW X5,Bremsbelagwechsel,108.2
+BMW X5,Reifenrotation,331.97
+BMW X5,Zündkerzenwechsel,206.68
+BMW X5,Luftfilterwechsel,262.35
+BMW X5,Radausrichtung,258.7
+BMW X5,Batteriewechsel,470.69
+BMW X5,Getriebeölwechsel,323.63
+BMW X5,Motorabstimmung,435.27
+BMW X5,Bremsscheibenwechsel,148.33
+BMW X5,Kühlmittelaustausch,122.54
+BMW X5,Zahnriemenwechsel,133.23
+BMW X5,Fahrwerkstuning,373.21
+BMW X5,Kupplungsaustausch,138.62
+BMW X5,Kraftstoffsystemreinigung,283.63
+BMW X5,Achsenreparatur,282.94
+BMW X5,Elektronikdiagnose,181.65
+BMW X5,Klimaanlagenwartung,421.64
+BMW X5,Getriebereparatur,54.48
+BMW X5,Steuerkettentausch,324.96
