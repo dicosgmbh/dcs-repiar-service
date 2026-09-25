@@ -42,6 +42,8 @@ public final class RepairServiceServer {
                 ex -> send(ex, 200, "text/plain", "OK")));
         register(server, base + "/actuator/health", auth, getOnly(base + "/actuator/health",
                 ex -> send(ex, 200, "application/json", "{\"status\":\"UP\"}")));
+        register(server, base + "/rest/repair-request/create", auth, getOnly(base + "/rest/repair-request/create",
+                new RepairRequestHandler()));
         register(server, base + "/", auth, ex -> send(ex, 404, "text/plain", "Not Found"));
 
         server.setExecutor(Executors.newCachedThreadPool());
