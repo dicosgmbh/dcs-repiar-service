@@ -92,3 +92,4 @@ class RepairServiceServerTest
 		return client.send(request.build(), HttpResponse.BodyHandlers.ofString());
 	}
 }
+

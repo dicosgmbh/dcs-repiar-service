@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reparaturservice</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 640px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      h1 {
+        font-size: 1.4rem;
+      }
+      label {
+        display: block;
+        margin-top: 0.75rem;
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 0.4rem;
+        box-sizing: border-box;
+      }
+      .operation-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.4rem;
+      }
+      .operation-row input[type="checkbox"] {
+        width: auto;
+      }
+      button {
+        margin-top: 1.2rem;
+        padding: 0.5rem 1rem;
+      }
+      #estimateResult,
+      #bookingResult {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        display: none;
+      }
+      #bookingForm {
+        display: none;
+      }
+      .error {
+        color: #b00020;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Kostenvoranschlag anfragen</h1>
+
+    <form id="estimateForm">
+      <label for="carModel">Automodell</label>
+      <select id="carModel" name="carModel" required></select>
+
+      <label>Benötigte Reparaturen</label>
+      <div id="operations"></div>
+
+      <button type="submit">Kostenvoranschlag berechnen</button>
+    </form>
+
+    <div id="estimateResult"></div>
+
+    <h1>Termin vorschlagen</h1>
+
+    <form id="bookingForm">
+      <label for="customerNumber">Kundennummer</label>
+      <input type="number" id="customerNumber" name="customerNumber" required />
+
+      <label for="numberPlate">Kennzeichen</label>
+      <input type="text" id="numberPlate" name="numberPlate" required />
+
+      <label for="preferredDate">Terminwunsch</label>
+      <input type="date" id="preferredDate" name="preferredDate" required />
+
+      <button type="submit">Terminwunsch absenden</button>
+    </form>
+
+    <div id="bookingResult"></div>
+
+    <script>
+      const CAR_MODELS = [
+        "Audi A3",
+        "Audi A4",
+        "Audi A6",
+        "Audi Q3",
+        "Audi Q5",
+        "Audi Q7",
+        "BMW 3 Series",
+        "BMW 5 Series",
+        "BMW 7 Series",
+        "BMW X1",
+        "BMW X3",
+        "BMW X5",
+      ];
+      const OPERATIONS = [
+        "Ölwechsel",
+        "Bremsbelagwechsel",
+        "Reifenrotation",
+        "Zündkerzenwechsel",
+        "Luftfilterwechsel",
+        "Radausrichtung",
+        "Batteriewechsel",
+        "Getriebeölwechsel",
+        "Motorabstimmung",
+        "Bremsscheibenwechsel",
+        "Kühlmittelaustausch",
+        "Zahnriemenwechsel",
+        "Fahrwerkstuning",
+        "Kupplungsaustausch",
+        "Kraftstoffsystemreinigung",
+        "Achsenreparatur",
+        "Elektronikdiagnose",
+        "Klimaanlagenwartung",
+        "Getriebereparatur",
+        "Steuerkettentausch",
+      ];
+
+      const carModelSelect = document.getElementById("carModel");
+      CAR_MODELS.forEach((model) =>
+        carModelSelect.add(new Option(model, model)),
+      );
+
+      const operationsContainer = document.getElementById("operations");
+      OPERATIONS.forEach((op) => {
+        const row = document.createElement("div");
+        row.className = "operation-row";
+        row.innerHTML = `<input type="checkbox" value="${op}" id="op-${op}"><label for="op-${op}" style="font-weight:normal;margin:0">${op}</label>`;
+        operationsContainer.appendChild(row);
+      });
+
+      let lastEstimate = null;
+
+      function selectedOperations() {
+        return OPERATIONS.filter(
+          (op) => document.getElementById(`op-${op}`).checked,
+        );
+      }
+
+      function query(params) {
+        return Object.entries(params)
+          .flatMap(([key, value]) =>
+            (Array.isArray(value) ? value : [value]).map(
+              (v) => `${encodeURIComponent(key)}=${encodeURIComponent(v)}`,
+            ),
+          )
+          .join("&");
+      }
+
+      document
+        .getElementById("estimateForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const carModel = carModelSelect.value;
+          const repairOperations = selectedOperations();
+          const resultBox = document.getElementById("estimateResult");
+          resultBox.style.display = "block";
+
+          if (repairOperations.length === 0) {
+            resultBox.innerHTML = `<p class="error">Bitte mindestens eine Reparatur auswählen.</p>`;
+            return;
+          }
+
+          const response = await fetch(
+            `rest/repair-request/estimate?${query({ carModel, repairOperations })}`,
+          );
+          if (!response.ok) {
+            resultBox.innerHTML = `<p class="error">Kostenvoranschlag konnte nicht ermittelt werden.</p>`;
+            return;
+          }
+
+          const estimate = await response.json();
+          lastEstimate = estimate;
+
+          let html = `<strong>${estimate.carModel}</strong><ul>`;
+          estimate.operations.forEach(
+            (op) =>
+              (html += `<li>${op.description}: ${op.priceEstimation.toFixed(2)} €</li>`),
+          );
+          html += `</ul><p><strong>Gesamt: ${estimate.total.toFixed(2)} €</strong></p>`;
+          if (estimate.unmatched.length > 0) {
+            html += `<p class="error">Keine Preisangabe für: ${estimate.unmatched.join(", ")}</p>`;
+          }
+          resultBox.innerHTML = html;
+
+          document.getElementById("bookingForm").style.display =
+            estimate.operations.length > 0 ? "block" : "none";
+        });
+
+      document
+        .getElementById("bookingForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const resultBox = document.getElementById("bookingResult");
+          resultBox.style.display = "block";
+
+          if (!lastEstimate || lastEstimate.operations.length === 0) {
+            resultBox.innerHTML = `<p class="error">Bitte zuerst einen Kostenvoranschlag berechnen.</p>`;
+            return;
+          }
+
+          const repairOperations = lastEstimate.operations.map(
+            (op) => `${op.description}:${op.priceEstimation}`,
+          );
+          const params = {
+            customerNumber: document.getElementById("customerNumber").value,
+            carModel: lastEstimate.carModel,
+            numberPlate: document.getElementById("numberPlate").value,
+            preferredDate: document.getElementById("preferredDate").value,
+            repairOperations,
+          };
+
+          const response = await fetch(
+            `rest/repair-request/create?${query(params)}`,
+          );
+          resultBox.innerHTML = response.ok
+            ? `<p>Terminwunsch wurde an die Verwaltung übermittelt.</p>`
+            : `<p class="error">Terminwunsch konnte nicht übermittelt werden.</p>`;
+        });
+    </script>
+  </body>
+</html>
