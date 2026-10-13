@@ -31,8 +31,10 @@ public final class RepairServiceServer {
     public static void main(String[] args)
             throws IOException {
         Optional<String> profile = Optional.ofNullable(System.getProperty("app.profile", System.getenv("APP_PROFILE")));
-        HttpServer server = start(Config.load(profile));
+        Config config = Config.load(profile);
+        HttpServer server = start(config);
         log.log(Level.INFO, "Started on port {0} (profile: {1})", String.valueOf(server.getAddress().getPort()), profile.orElse("default"));
+        log.log(Level.INFO, "Index page: http://localhost:{0}{1}/index.html", String.valueOf(server.getAddress().getPort()), config.contextPath());
     }
 
     public static HttpServer start(Config config)
